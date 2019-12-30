@@ -75,6 +75,33 @@ moment.fn.businessDiff = function (param, relative) {
   return daysBetween;
 };
 
+moment.fn.weekendDiff = function (param, relative) {
+  var d1 = this.clone();
+  var d2 = param.clone();
+  var positive = d1 >= d2;
+  var start = d1 < d2 ? d1 : d2;
+  var end = d2 > d1 ? d2 : d1;
+
+  var daysBetween = 0;
+
+  if (start.format('DD/MM/YYYY') === end.format('DD/MM/YYYY')) {
+    return daysBetween;
+  }
+
+  while (start < end) {
+    if (!start.isBusinessDay()) {
+      daysBetween++;
+    }
+    start.add(1, 'd');
+  }
+
+  if (relative) {
+    return positive ? daysBetween : -daysBetween;
+  }
+
+  return daysBetween;
+};
+
 moment.fn.businessAdd = function (number, period) {
   var day = this.clone();
   if (!day.isValid()) {

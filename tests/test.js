@@ -302,6 +302,24 @@ describe('Moment Business Days', function () {
       expect(diff).to.eql(0);
     });
   });
+
+  describe('Weekend Diff', function () {
+    afterEach(resetLocale);
+    it('Should calculate number of weekends between dates', function () {
+      var diff = moment('05-15-2017', 'MM-DD-YYYY').weekendDiff(
+        moment('05-08-2017', 'MM-DD-YYYY')
+      );
+      expect(diff).to.eql(2);
+    });
+    it('...and in reverse order', function () {
+      var diff = moment('05-08-2017', 'MM-DD-YYYY').weekendDiff(
+        moment('05-15-2017', 'MM-DD-YYYY')
+      );
+      expect(diff).to.eql(2);
+    });
+  });
+
+
   describe('Business Weeks', function () {
     afterEach(resetLocale);
     it('Should return array of business weeks on .monthBusinessWeeks', function () {
