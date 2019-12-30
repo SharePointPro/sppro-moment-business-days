@@ -1,4 +1,19 @@
-# moment-business-days
+# sppro-moment-business-days
+
+Forked from https://github.com/kalmecak/moment-business-days
+
+Added weekendDiff:
+
+.weekendDiff() => number
+Calculate the amount of weekends between dates.
+
+var diff = moment('05-15-2017', 'MM-DD-YYYY').weekendDiff(moment('05-08-2017','MM-DD-YYYY'));
+// diff = 2
+Note that the default behavior of weekendDiff is to return an absolute value, which is a departure from moment's diff. To match the behavior of diff pass true as the second argument to weekendDiff:
+
+var diff = moment('05-08-2017', 'MM-DD-YYYY').weekendDiff(moment('05-15-2017','MM-DD-YYYY'), true);
+// diff = -2
+
 
 <a href="https://github.com/kalmecak/moment-business-days/actions" target="_blank">
   <img alt="Version" src="https://github.com/kalmecak/moment-business-days/workflows/Continuous%20Integration/badge.svg?branch=master">
