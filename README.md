@@ -1,6 +1,6 @@
 # sppro-moment-business-days
 
-Forked from https://github.com/kalmecak/moment-business-days
+Forked from https://github.com/kalmecak/moment-business-days All credit goes to Christian (https://github.com/kalmecak)
 
 Added weekendDiff:
 ````javascript
