@@ -3,17 +3,21 @@
 Forked from https://github.com/kalmecak/moment-business-days
 
 Added weekendDiff:
-
+````javascript
 .weekendDiff() => number
-Calculate the amount of weekends between dates.
 
+````
+Calculate the amount of weekends between dates.
+````javascript
 var diff = moment('05-15-2017', 'MM-DD-YYYY').weekendDiff(moment('05-08-2017','MM-DD-YYYY'));
 // diff = 2
+````
 Note that the default behavior of weekendDiff is to return an absolute value, which is a departure from moment's diff. To match the behavior of diff pass true as the second argument to weekendDiff:
 
+````javascript
 var diff = moment('05-08-2017', 'MM-DD-YYYY').weekendDiff(moment('05-15-2017','MM-DD-YYYY'), true);
 // diff = -2
-
+````
 
 This is a [Moment.js](https://github.com/moment/moment/) plugin that allows you to work with only business days
 (Monday to Friday). You can customize the working week, and also set custom dates for holidays to exclude them from
